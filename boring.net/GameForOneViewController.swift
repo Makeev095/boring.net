@@ -13,10 +13,14 @@ class GameForOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRandomActivityForOne()
+        view.backgroundColor = UIColor(hexString: "#040C1E")
         
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "GameForOneBackgroundImage")
-        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
+//  Добавление картинки на весь экран
+
+//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+//        backgroundImage.image = UIImage(named: "GameForOneBackgroundImage")
+//        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
+//        self.view.insertSubview(backgroundImage, at: 0)
+        
     }
 }

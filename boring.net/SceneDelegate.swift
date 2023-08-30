@@ -20,10 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let findGameViewController = FindGameViewController()
         let settingsViewController = SettingsViewController()
         
-        findGameViewController.tabBarItem.title = "Найти занятие"
-        // findGameViewController.tabBarItem.image(UIImage(named: <#T##String#>))
-        settingsViewController.tabBarItem.title = "Настройки"
-        
         let controllers = [findGameViewController, settingsViewController]
         
         tabBarController.viewControllers = controllers
@@ -31,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.tabBar.tintColor = .magenta
         tabBarController.tabBar.backgroundColor = .systemGray3
         
-        let navigationController = UINavigationController(rootViewController: tabBarController)
+        let navigationController = UINavigationController(rootViewController: findGameViewController)
         
         window = UIWindow(windowScene: scene)
         window?.rootViewController = navigationController

@@ -45,7 +45,7 @@ class FindGameViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             gameForOneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            gameForOneButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 250),
+            gameForOneButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 290),
             gameForOneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             gameForOneButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
             gameForOneButton.heightAnchor.constraint(equalToConstant: 100),

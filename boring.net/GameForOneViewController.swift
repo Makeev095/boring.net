@@ -18,7 +18,6 @@ class GameForOneViewController: UIViewController {
     
     private var labelForShowingGameForOne: UILabel = {
         var labelForShowingGameForOne = UILabel()
-        
         return labelForShowingGameForOne
     }()
     

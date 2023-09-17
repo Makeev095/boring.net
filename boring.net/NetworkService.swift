@@ -28,3 +28,25 @@ func getRandomActivityForOne() {
     }
     task.resume()
 }
+
+func GetActivityForCompany() {
+    let url = URL(string: "http://www.boredapi.com/api/activity?participants=3")
+    
+    let configuration = URLSessionConfiguration.default
+    
+    let session = URLSession(configuration: configuration)
+    
+    let task = session.dataTask(with: url!) { (data, response, error) in
+        guard let data = data else {
+            print(response!)
+            return
+        }
+        do {
+            let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
+            print(companyActivity.activityForCompany)
+        } catch {
+            print(error)
+        }
+    }
+    task.resume()
+}

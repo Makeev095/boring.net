@@ -21,7 +21,7 @@ struct Activity: Decodable {
     var accessibility: Double
 }
 
-enum CoddingKeys: String, CodingKey {
+enum CodingKeysForOneActivity: String, CodingKey {
     case activity
     case type
     case participants

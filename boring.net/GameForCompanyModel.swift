@@ -12,7 +12,7 @@ struct GameForCompanyModel: Decodable {
 }
 
 struct CompanyActivity: Decodable {
-    var activityForCompany: String
+    var activity: String
     var type: String
     var participants: Int
     var price: Double
@@ -21,8 +21,8 @@ struct CompanyActivity: Decodable {
     var link: String
 }
 
-enum CodingKeysForCompanyActivity: String, CodingKey {
-    case activityForCompany
+private enum CodingKeys: String, CodingKey {
+    case activity
     case type
     case participants
     case price

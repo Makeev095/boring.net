@@ -11,6 +11,7 @@ import UIKit
 class GameForCompanyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        GetActivityForCompany()
         view.backgroundColor = UIColor(hexString: "#040C1E")
     }
 }

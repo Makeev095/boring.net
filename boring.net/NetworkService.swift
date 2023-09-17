@@ -30,7 +30,7 @@ func getRandomActivityForOne() {
 }
 
 func GetActivityForCompany() {
-    let url = URL(string: "http://www.boredapi.com/api/activity?participants=3")
+    let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
     
     let configuration = URLSessionConfiguration.default
     
@@ -43,7 +43,7 @@ func GetActivityForCompany() {
         }
         do {
             let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
-            print(companyActivity.activityForCompany)
+            print(companyActivity.activity)
         } catch {
             print(error)
         }

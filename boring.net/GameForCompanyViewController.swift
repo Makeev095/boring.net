@@ -9,9 +9,11 @@ import Foundation
 import UIKit
 
 class GameForCompanyViewController: UIViewController {
+    
+    private var networkService = NetworkService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        GetActivityForCompany()
+        networkService.GetActivityForCompany()
         view.backgroundColor = UIColor(hexString: "#040C1E")
     }
 }

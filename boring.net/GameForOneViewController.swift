@@ -8,12 +8,34 @@
 import Foundation
 import UIKit
 
-class GameForOneViewController: UIViewController {
+final class GameForOneViewController: UITableViewController {
     
+    private let networkService = NetworkService()
+    private var gameForOneModel: [Activity] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        getRandomActivityForOne()
-        view.backgroundColor = UIColor(hexString: "#040C1E")
+        view.backgroundColor = .white
+        tableView.backgroundColor = UIColor(hexString: "#040C1E")
+        tableView.register(GameForOneCell.self, forCellReuseIdentifier: "GameForOneCell")
+        networkService.getRandomActivityForOne {[weak self] gameForOne in
+            self?.gameForOneModel = gameForOne
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        gameForOneModel.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameForOneCell", for: indexPath) as? GameForOneCell else {
+            return UITableViewCell()
+        }
+        let gameForOne = gameForOneModel[indexPath.row]
+        cell.updateCell(model: gameForOne)
+        return cell
     }
     
     private var labelForShowingGameForOne: UILabel = {

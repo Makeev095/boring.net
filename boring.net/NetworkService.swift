@@ -7,46 +7,50 @@
 
 import Foundation
 
-func getRandomActivityForOne() {
-    let url = URL(string: "https://www.boredapi.com/api/activity?participants=1")
+final class NetworkService {
     
-    let configuration = URLSessionConfiguration.default
-    
-    let session = URLSession(configuration: configuration)
-    
-    let task = session.dataTask(with: url!) { (data, response, error) in
-        guard let data = data else {
-            print(response!)
-            return
+    func getRandomActivityForOne(completion: @escaping ([Activity]) -> Void) {
+        let url = URL(string: "https://www.boredapi.com/api/activity?participants=1")
+        
+        let configuration = URLSessionConfiguration.default
+        
+        let session = URLSession(configuration: configuration)
+        
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            guard let data = data else {
+                print(response!)
+                return
+            }
+            do {
+                let activity = try JSONDecoder().decode(RandomActivityForOneModel.self, from: data)
+                print(activity)
+                completion(activity.randomActivity)
+            } catch {
+                print(error)
+            }
         }
-        do {
-            let activity = try JSONDecoder().decode(Activity.self, from: data)
-            print(activity.activity)
-        } catch {
-            print(error)
-        }
+        task.resume()
     }
-    task.resume()
-}
-
-func GetActivityForCompany() {
-    let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
     
-    let configuration = URLSessionConfiguration.default
-    
-    let session = URLSession(configuration: configuration)
-    
-    let task = session.dataTask(with: url!) { (data, response, error) in
-        guard let data = data else {
-            print(response!)
-            return
+    func GetActivityForCompany() {
+        let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
+        
+        let configuration = URLSessionConfiguration.default
+        
+        let session = URLSession(configuration: configuration)
+        
+        let task = session.dataTask(with: url!) { (data, response, error) in
+            guard let data = data else {
+                print(response!)
+                return
+            }
+            do {
+                let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
+                print(companyActivity.activity)
+            } catch {
+                print(error)
+            }
         }
-        do {
-            let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
-            print(companyActivity.activity)
-        } catch {
-            print(error)
-        }
+        task.resume()
     }
-    task.resume()
 }

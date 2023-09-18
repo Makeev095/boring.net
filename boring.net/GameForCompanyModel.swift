@@ -16,7 +16,7 @@ struct CompanyActivity: Decodable {
     var type: String
     var participants: Int
     var price: Double
-    var key: String?
+    var key: String
     var accessibility: Double
     var link: String
 }

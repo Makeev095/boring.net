@@ -45,6 +45,12 @@ class FindGameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backgroundImageForMainScreen = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImageForMainScreen.image = UIImage(named: "BackgroundImageForMainScreen")
+        backgroundImageForMainScreen.contentMode =  UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImageForMainScreen, at: 0)
+        
         view.backgroundColor = UIColor(hexString: "#040C1E")
         view.addSubview(lableForMainScreen)
         view.addSubview(gameForOneButton)

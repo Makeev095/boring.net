@@ -22,9 +22,9 @@ final class NetworkService {
                 return
             }
             do {
-                let activity = try JSONDecoder().decode(RandomActivityForOneModel.self, from: data)
-                print(activity)
-                completion(activity.randomActivity)
+                let activity = try JSONDecoder().decode(Activity.self, from: data)
+                print(activity.activity)
+                
             } catch {
                 print(error)
             }

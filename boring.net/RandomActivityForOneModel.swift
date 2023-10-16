@@ -8,17 +8,17 @@
 import Foundation
 
 struct RandomActivityForOneModel: Decodable {
-    var randomActivity: [Activity]
+    let ActivityForOne: [Activity]
 }
 
 struct Activity: Decodable {
-    var activity: String
-    var type: String
-    var participants: Int
-    var price: Double
-    var link: String
-    var key: String
-    var accessibility: Double
+    let activity: String
+    let type: String
+    let participants: Int
+    let price: Double
+    let link: String
+    let key: String
+    let accessibility: Double
 }
 
 private enum CodingKeys: String, CodingKey {
@@ -29,5 +29,5 @@ private enum CodingKeys: String, CodingKey {
     case link
     case key
     case accessibility
-    case randomActivity
+    case ActivityForOne
 }

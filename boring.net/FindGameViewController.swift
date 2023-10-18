@@ -12,9 +12,9 @@ class FindGameViewController: UIViewController {
     private var gameForOneButton: UIButton = {
         let gameForOneButton = UIButton()
         gameForOneButton.setTitle("Activity for one", for: .normal)
-        gameForOneButton.titleLabel?.font = .italicSystemFont(ofSize: 30)
+        gameForOneButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
         gameForOneButton.backgroundColor = UIColor(hexString: "#262A38")
-        gameForOneButton.setTitleColor(UIColor(hexString: "#FFFFFF"), for: .normal)
+        gameForOneButton.setTitleColor(UIColor(hexString: "#EF6D58"), for: .normal)
         gameForOneButton.layer.cornerRadius = 45
         
         return gameForOneButton
@@ -23,8 +23,8 @@ class FindGameViewController: UIViewController {
     private var gameForCompanyButton: UIButton = {
        var gameForCompanyButton = UIButton()
         gameForCompanyButton.setTitle("Activity for company", for: .normal)
-        gameForCompanyButton.titleLabel?.font = .italicSystemFont(ofSize: 30)
-        gameForCompanyButton.setTitleColor(UIColor(hexString: "#FFFFFF"), for: .normal)
+        gameForCompanyButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
+        gameForCompanyButton.setTitleColor(UIColor(hexString: "#EF6D58"), for: .normal)
         gameForCompanyButton.backgroundColor = UIColor(hexString: "#262A38")
         gameForCompanyButton.layer.cornerRadius = 45
         
@@ -47,7 +47,7 @@ class FindGameViewController: UIViewController {
         super.viewDidLoad()
         
         let backgroundImageForMainScreen = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImageForMainScreen.image = UIImage(named: "BackgroundImageForMainScreen")
+        backgroundImageForMainScreen.image = UIImage(named: "PhotoForMainScreen")
         backgroundImageForMainScreen.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImageForMainScreen, at: 0)
         

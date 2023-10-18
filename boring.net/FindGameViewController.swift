@@ -33,7 +33,7 @@ class FindGameViewController: UIViewController {
     
     private var lableForMainScreen: UILabel = {
         var lableForMainScreen = UILabel()
-        lableForMainScreen.text = "Borring.Net"
+        lableForMainScreen.text = "Boring.Net"
         lableForMainScreen.textAlignment = .center
         lableForMainScreen.shadowColor = .red
         lableForMainScreen.textColor = UIColor(hexString: "#EF6D58")
@@ -47,7 +47,7 @@ class FindGameViewController: UIViewController {
         super.viewDidLoad()
         
         let backgroundImageForMainScreen = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImageForMainScreen.image = UIImage(named: "PhotoForMainScreen")
+        backgroundImageForMainScreen.image = UIImage(named: "BackgroundPhotoForMainScreen")
         backgroundImageForMainScreen.contentMode =  UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImageForMainScreen, at: 0)
         

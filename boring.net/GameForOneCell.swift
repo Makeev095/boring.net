@@ -29,9 +29,7 @@ final class GameForOneCell: UITableViewCell {
     func updateCell(model: Activity) {
         text.text = (model.activity )
         DispatchQueue.global().async {
-            if let url = URL(string: model.activity), let _ = try? Data(contentsOf: url) { DispatchQueue.main.async {
-                self.text = UILabel()
-            }
+            if let url = URL(string: model.activity), let _ = try? Data(contentsOf: url) {
             }
         }
     }

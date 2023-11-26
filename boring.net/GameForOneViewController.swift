@@ -37,17 +37,4 @@ final class GameForOneViewController: UITableViewController {
         cell.updateCell(model: gameForOne)
         return cell
     }
-    
-    private var labelForShowingGameForOne: UILabel = {
-        var labelForShowingGameForOne = UILabel()
-        return labelForShowingGameForOne
-    }()
-    
-//  Добавление картинки на весь экран
-
-//        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-//        backgroundImage.image = UIImage(named: "GameForOneBackgroundImage")
-//        backgroundImage.contentMode =  UIView.ContentMode.scaleAspectFill
-//        self.view.insertSubview(backgroundImage, at: 0)
-        
 }

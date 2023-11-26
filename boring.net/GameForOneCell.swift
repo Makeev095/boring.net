@@ -8,14 +8,14 @@
 import UIKit
 
 final class GameForOneCell: UITableViewCell {
-
+    
     private var text: UILabel = {
         let text = UILabel()
         text.text = "Name"
         text.textColor = .red
         return text
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .clear
@@ -28,10 +28,6 @@ final class GameForOneCell: UITableViewCell {
     
     func updateCell(model: Activity) {
         text.text = (model.activity )
-        DispatchQueue.global().async {
-            if let url = URL(string: model.activity), let _ = try? Data(contentsOf: url) {
-            }
-        }
     }
     
     private func setupViews() {
@@ -47,7 +43,7 @@ final class GameForOneCell: UITableViewCell {
             text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 50)
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
         ])
     }
 }

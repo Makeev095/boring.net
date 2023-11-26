@@ -32,7 +32,7 @@ final class NetworkService {
         task.resume()
     }
     
-    func GetActivityForCompany() {
+    func getActivityForCompany() {
         let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
         
         let configuration = URLSessionConfiguration.default

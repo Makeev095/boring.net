@@ -13,7 +13,7 @@ class GameForCompanyViewController: UIViewController {
     private var networkService = NetworkService()
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkService.GetActivityForCompany()
+        networkService.getActivityForCompany()
         view.backgroundColor = UIColor(hexString: "#040C1E")
     }
 }

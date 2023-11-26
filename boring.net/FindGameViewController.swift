@@ -21,7 +21,7 @@ class FindGameViewController: UIViewController {
     }()
     
     private var gameForCompanyButton: UIButton = {
-       var gameForCompanyButton = UIButton()
+        var gameForCompanyButton = UIButton()
         gameForCompanyButton.setTitle("Activity for company", for: .normal)
         gameForCompanyButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
         gameForCompanyButton.setTitleColor(UIColor(hexString: "#EF6D58"), for: .normal)
@@ -42,7 +42,7 @@ class FindGameViewController: UIViewController {
         
         return lableForMainScreen
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,7 +59,7 @@ class FindGameViewController: UIViewController {
         gameForCompanyButton.addTarget(self, action: #selector(gameForCompanyButtonTapped), for: .touchUpInside)
         setupConstraints()
     }
-
+    
     func setupConstraints() {
         gameForOneButton.translatesAutoresizingMaskIntoConstraints = false
         gameForCompanyButton.translatesAutoresizingMaskIntoConstraints = false
@@ -78,7 +78,7 @@ class FindGameViewController: UIViewController {
             gameForOneButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),
             gameForOneButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -40),
             gameForOneButton.heightAnchor.constraint(equalToConstant: 110),
-        
+            
             gameForCompanyButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             gameForCompanyButton.topAnchor.constraint(equalTo: gameForOneButton.topAnchor, constant: 200),
             gameForCompanyButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 40),

@@ -10,12 +10,21 @@ import UIKit
 
 final class GameForOneViewController: UITableViewController {
     
+    private var text: UILabel = {
+        let text = UILabel()
+        text.text = "Name"
+        text.textColor = .red
+        return text
+    }()
+    
     private let networkService = NetworkService()
     private var gameForOneModel: [Activity] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Activity For One"
         view.backgroundColor = .white
-        tableView.backgroundColor = UIColor(hexString: "#040C1E")
+//        tableView.backgroundColor = UIColor(hexString: "#040C1E")
         tableView.register(GameForOneCell.self, forCellReuseIdentifier: "GameForOneCell")
         networkService.getRandomActivityForOne {[weak self] gameForOne in
             self?.gameForOneModel = gameForOne
@@ -26,13 +35,15 @@ final class GameForOneViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        gameForOneModel.count
+        return gameForOneModel.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameForOneCell", for: indexPath) as? GameForOneCell else {
             return UITableViewCell()
         }
+        
         let gameForOne = gameForOneModel[indexPath.row]
         cell.updateCell(model: gameForOne)
         return cell

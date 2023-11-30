@@ -27,7 +27,7 @@ final class GameForOneCell: UITableViewCell {
     }
     
     func updateCell(model: Activity) {
-        text.text = (model.activity )
+        text.text = (model.activity)
     }
     
     private func setupViews() {
@@ -40,10 +40,10 @@ final class GameForOneCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
     }
 }

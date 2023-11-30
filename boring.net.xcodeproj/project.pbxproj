@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36AD91772B18CDF50001B24B /* GameForCompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD91762B18CDF50001B24B /* GameForCompanyCell.swift */; };
 		36B9D1782A9FA818004DA08B /* UIColor + ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B9D1772A9FA818004DA08B /* UIColor + ext.swift */; };
 		36C0FF8B2AB89B5300854D41 /* GameForOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0FF8A2AB89B5300854D41 /* GameForOneCell.swift */; };
 		36DF51E72A938F01006A91A3 /* SettingsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DF51E62A938F01006A91A3 /* SettingsViewCell.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		3197B211AFFE36CEEEC84F1D /* Pods_boring_net.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_boring_net.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36AD91762B18CDF50001B24B /* GameForCompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameForCompanyCell.swift; sourceTree = "<group>"; };
 		36B9D1772A9FA818004DA08B /* UIColor + ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + ext.swift"; sourceTree = "<group>"; };
 		36C0FF8A2AB89B5300854D41 /* GameForOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameForOneCell.swift; sourceTree = "<group>"; };
 		36DF51E62A938F01006A91A3 /* SettingsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewCell.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				36E0AE7D2A98F2C800913D63 /* GameForCompanyModel.swift */,
 				36B9D1772A9FA818004DA08B /* UIColor + ext.swift */,
 				36C0FF8A2AB89B5300854D41 /* GameForOneCell.swift */,
+				36AD91762B18CDF50001B24B /* GameForCompanyCell.swift */,
 			);
 			path = boring.net;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				36DF51E72A938F01006A91A3 /* SettingsViewCell.swift in Sources */,
 				36E0AE402A95213600913D63 /* GameForCompanyViewController.swift in Sources */,
 				36C0FF8B2AB89B5300854D41 /* GameForOneCell.swift in Sources */,
+				36AD91772B18CDF50001B24B /* GameForCompanyCell.swift in Sources */,
 				36E0AE7A2A98F29800913D63 /* NetworkService.swift in Sources */,
 				36B9D1782A9FA818004DA08B /* UIColor + ext.swift in Sources */,
 				36E253E92A7A90BA007DAA3C /* AppDelegate.swift in Sources */,

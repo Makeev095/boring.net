@@ -21,12 +21,12 @@ struct CompanyActivity: Decodable {
     var link: String
 }
 
-private enum CodingKeys: String, CodingKey {
-    case activity
-    case type
-    case participants
-    case price
-    case link
-    case key
-    case accessibility
-}
+//private enum CodingKeys: String, CodingKey {
+//    case activity
+//    case type
+//    case participants
+//    case price
+//    case link
+//    case key
+//    case accessibility
+//}

@@ -8,17 +8,17 @@
 import Foundation
 
 struct GameForCompanyModel: Decodable {
-    var randomActivity: [CompanyActivity]
+    let randomActivity: [CompanyActivity]
 }
 
 struct CompanyActivity: Decodable {
-    var activity: String
-    var type: String
-    var participants: Int
-    var price: Double
-    var key: String
-    var accessibility: Double
-    var link: String
+    let activity: String
+    let type: String
+    let participants: Int
+    let price: Double
+    let key: String
+    let accessibility: Double
+    let link: String
 }
 
 //private enum CodingKeys: String, CodingKey {

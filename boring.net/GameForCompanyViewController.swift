@@ -8,16 +8,30 @@
 import Foundation
 import UIKit
 
-class GameForCompanyViewController: UITableViewController {
+final class GameForCompanyViewController: UITableViewController {
+    
+    private var text: UILabel = {
+        let text = UILabel()
+        text.text = "Name"
+        text.textColor = .red
+        return text
+    }()
     
     private var networkService = NetworkService()
-    var companyActivity = [CompanyActivity]()
+    var companyActivity: [CompanyActivity] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Activity For Company"
-        networkService.getActivityForCompany()
+        view.backgroundColor = .white
 //        view.backgroundColor = UIColor(hexString: "#040C1E")
+        tableView.register(GameForCompanyCell.self, forCellReuseIdentifier: "GameForCompanyCell")
+        networkService.getActivityForCompany {[weak self] gameForCompany in
+            self?.companyActivity = gameForCompany
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
         
     }
     
@@ -26,7 +40,13 @@ class GameForCompanyViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "companyActivity", for: indexPath)
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "companyActivity", for: indexPath) as? GameForCompanyCell else {
+            return UITableViewCell()
+        }
+        
+        let gameForCompany = companyActivity[indexPath.row]
+        cell.updateCell(model: gameForCompany)
 //        cell.textLabel?.text = companyActivity[indexPath.row]
         return cell
     }

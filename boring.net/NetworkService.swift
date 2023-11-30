@@ -14,9 +14,9 @@ final class NetworkService {
     func getRandomActivityForOne(completion: @escaping ([Activity]) -> Void) {
         let url = URL(string: "https://www.boredapi.com/api/activity?participants=1")
         
-        let configuration = URLSessionConfiguration.default
-        
-        let session = URLSession(configuration: configuration)
+//        let configuration = URLSessionConfiguration.default
+//
+//        let session = URLSession(configuration: configuration)
         
         let task = session.dataTask(with: url!) { (data, response, error) in
             guard let data = data else {
@@ -26,6 +26,7 @@ final class NetworkService {
             do {
                 let activity = try JSONDecoder().decode(Activity.self, from: data)
                 print(activity.activity)
+                completion([activity])
                 
             } catch {
                 print(error)
@@ -34,45 +35,50 @@ final class NetworkService {
         task.resume()
     }
     
-    func getActivityForCompany() {
-        let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
-
-        let configuration = URLSessionConfiguration.default
-
-        let session = URLSession(configuration: configuration)
-
-        let task = session.dataTask(with: url!) { (data, response, error) in
-            guard let data = data else {
-                print(response!)
-                return
-            }
-            do {
-                let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
-                print(companyActivity.activity)
-            } catch {
-                print(error)
-            }
-        }
-        task.resume()
-    }
-    
-//    func getActivityForCompany(completion: @escaping([CompanyActivity]) -> Void) {
-//        guard let url = URL(string: "https://www.boredapi.com/api/activity?participants=3") else {
-//            return
-//        }
+//    func getActivityForCompany() {
+//        let url = URL(string: "https://www.boredapi.com/api/activity?participants=3")
 //
-//        session.dataTask(with: url) { (data, _, error) in
+//        let configuration = URLSessionConfiguration.default
+//
+//        let session = URLSession(configuration: configuration)
+//
+//        let task = session.dataTask(with: url!) { (data, response, error) in
 //            guard let data = data else {
+//                print(response!)
 //                return
 //            }
 //            do {
-//                 let companyActivity = try JSONDecoder().decode(GameForCompanyModel.self, from: data)
-//                completion(companyActivity.randomActivity)
-//                print(companyActivity.randomActivity)
+//                let companyActivity = try JSONDecoder().decode(CompanyActivity.self, from: data)
+//                print(companyActivity.activity)
+//
+////                completion([companyActivity.activity])
+//
 //            } catch {
 //                print(error)
 //            }
-//        }.resume()
+//        }
+//        task.resume()
 //    }
+    
+    func getActivityForCompany(completion: @escaping([CompanyActivity]) -> Void) {
+        guard let url = URL(string: "https://www.boredapi.com/api/activity?participants=3") else {
+            return
+        }
+
+        session.dataTask(with: url) { (data, _, error) in
+            guard let data = data else {
+                return
+            }
+            do {
+                 let companyActivity = try JSONDecoder().decode(GameForCompanyModel.self, from: data)
+                completion(companyActivity.randomActivity)
+                print(companyActivity.randomActivity)
+                
+                completion(companyActivity.randomActivity)
+            } catch {
+                print(error)
+            }
+        }.resume()
+    }
 
 }

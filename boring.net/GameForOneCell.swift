@@ -11,7 +11,7 @@ final class GameForOneCell: UITableViewCell {
     
     private var text: UILabel = {
         let text = UILabel()
-        text.text = "Name"
+        text.numberOfLines = 0
         text.textColor = .red
         return text
     }()
@@ -41,8 +41,6 @@ final class GameForOneCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
         ])
     }

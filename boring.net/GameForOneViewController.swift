@@ -10,13 +10,6 @@ import UIKit
 
 final class GameForOneViewController: UITableViewController {
     
-    private var text: UILabel = {
-        let text = UILabel()
-        text.text = "Name"
-        text.textColor = .red
-        return text
-    }()
-    
     private let networkService = NetworkService()
     private var gameForOneModel: [Activity] = []
     

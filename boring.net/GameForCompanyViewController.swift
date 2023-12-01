@@ -10,13 +10,6 @@ import UIKit
 
 final class GameForCompanyViewController: UITableViewController {
     
-    private var text: UILabel = {
-        let text = UILabel()
-        text.text = "Name"
-        text.textColor = .red
-        return text
-    }()
-    
     private var networkService = NetworkService()
     var companyActivity: [CompanyActivity] = []
     
@@ -47,7 +40,6 @@ final class GameForCompanyViewController: UITableViewController {
         
         let gameForCompany = companyActivity[indexPath.row]
         cell.updateCell(model: gameForCompany)
-//        cell.textLabel?.text = companyActivity[indexPath.row]
         return cell
     }
 }

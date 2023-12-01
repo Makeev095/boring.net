@@ -21,7 +21,7 @@ struct CompanyActivity: Decodable {
     let link: String
 }
 
-//private enum CodingKeys: String, CodingKey {
+// private enum CodingKeys: String, CodingKey {
 //    case activity
 //    case type
 //    case participants
@@ -29,4 +29,4 @@ struct CompanyActivity: Decodable {
 //    case link
 //    case key
 //    case accessibility
-//}
+// }

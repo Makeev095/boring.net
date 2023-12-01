@@ -16,17 +16,17 @@ struct CompanyActivity: Decodable {
     let type: String
     let participants: Int
     let price: Double
+    let link: String
     let key: String
     let accessibility: Double
-    let link: String
 }
 
-// private enum CodingKeys: String, CodingKey {
-//    case activity
-//    case type
-//    case participants
-//    case price
-//    case link
-//    case key
-//    case accessibility
-// }
+ private enum CodingKeys: String, CodingKey {
+    case activity
+    case type
+    case participants
+    case price
+    case link
+    case key
+    case accessibility
+ }

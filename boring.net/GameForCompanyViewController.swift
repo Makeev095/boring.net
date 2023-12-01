@@ -34,7 +34,7 @@ final class GameForCompanyViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "companyActivity", for: indexPath) as? GameForCompanyCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GameForCompanyCell", for: indexPath) as? GameForCompanyCell else {
             return UITableViewCell()
         }
         

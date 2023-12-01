@@ -11,10 +11,10 @@ import UIKit
 class GameForCompanyCell: UITableViewCell {
     
     private var text: UILabel = {
-        let label = UILabel()
-        label.text = "Name"
-        label.textColor = .black
-        return label
+        let text = UILabel()
+        text.numberOfLines = 0
+        text.textColor = .red
+        return text
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,16 +28,7 @@ class GameForCompanyCell: UITableViewCell {
     }
     
     func updateCell(model: CompanyActivity) {
-        text.text = model.activity
-        
-        DispatchQueue.global().async {
-            if let url = URL(string: model.activity ?? ""), let data = try? Data(contentsOf: url)
-            {
-//                DispatchQueue.main.async {
-//                    self.friendImageView.image = UIImage(data: data)
-//                }
-            }
-        }
+        text.text = (model.activity)
     }
     
     private func setupViews() {
@@ -50,8 +41,9 @@ class GameForCompanyCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            text.leadingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }

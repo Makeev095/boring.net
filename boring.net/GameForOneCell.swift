@@ -41,7 +41,9 @@ final class GameForOneCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
+            text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }
 }

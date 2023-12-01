@@ -14,6 +14,7 @@ class GameForCompanyCell: UITableViewCell {
         let text = UILabel()
         text.numberOfLines = 0
         text.textColor = .red
+        text.font = UIFont(name: "Arial", size: 30)
         return text
     }()
     
@@ -41,10 +42,10 @@ class GameForCompanyCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
-            text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+            text.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 300),
+            text.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -320),
+            text.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 80),
+            text.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -45)
         ])
     }
 }

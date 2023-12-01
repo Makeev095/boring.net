@@ -16,8 +16,7 @@ final class GameForOneViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Activity For One"
-        view.backgroundColor = .white
-//        tableView.backgroundColor = UIColor(hexString: "#040C1E")
+        tableView.backgroundColor = UIColor(hexString: "#040C1E")
         tableView.register(GameForOneCell.self, forCellReuseIdentifier: "GameForOneCell")
         networkService.getRandomActivityForOne {[weak self] gameForOne in
             self?.gameForOneModel = gameForOne

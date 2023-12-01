@@ -16,8 +16,7 @@ final class GameForCompanyViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Activity For Company"
-        view.backgroundColor = .white
-//        view.backgroundColor = UIColor(hexString: "#040C1E")
+        view.backgroundColor = UIColor(hexString: "#040C1E")
         tableView.register(GameForCompanyCell.self, forCellReuseIdentifier: "GameForCompanyCell")
         networkService.getActivityForCompany {[weak self] gameForCompany in
             self?.companyActivity = gameForCompany

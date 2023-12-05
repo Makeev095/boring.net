@@ -55,6 +55,7 @@ class FindGameViewController: UIViewController {
         view.addSubview(lableForMainScreen)
         view.addSubview(gameForOneButton)
         view.addSubview(gameForCompanyButton)
+        
         gameForOneButton.addTarget(self, action: #selector(gameForOneButtonTapped), for: .touchUpInside)
         gameForCompanyButton.addTarget(self, action: #selector(gameForCompanyButtonTapped), for: .touchUpInside)
         setupConstraints()
